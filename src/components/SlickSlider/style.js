@@ -5,6 +5,7 @@ export const SliderContainer = styled(Slider)`
   text-align: center;
   .feedback {
     &__content {
+      color: #777;
     }
     &__img {
       width: 100px;
