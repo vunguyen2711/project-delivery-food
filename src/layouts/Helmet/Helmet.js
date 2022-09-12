@@ -1,8 +1,8 @@
 import React from "react";
 
-const Helmet = (props) => {
-  document.title = "Food Ordering Apps -" + props.title;
-  return <div>{props.children}</div>;
+const Helmet = ({ title, children }) => {
+  document.title = "Food Ordering Apps -" + title;
+  return <div>{children}</div>;
 };
 
 export default Helmet;

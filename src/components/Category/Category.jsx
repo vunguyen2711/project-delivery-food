@@ -15,9 +15,9 @@ const categoryData = [
 const Category = () => {
   return (
     <S.CategoryContainer>
-      <S.CategoryMainContent gutter={10}>
+      <S.CategoryMainContent gutter={12}>
         {categoryData.map((item, index) => (
-          <Col lg={6} md={8}>
+          <Col lg={6} md={12} sm={24}>
             <div className="category__item">
               <div className="category__image">
                 <img src={item.imgUrl} alt="" />

@@ -4,6 +4,6 @@ export const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   .routes__container {
-    flex: 1;
+    min-height: calc(100vh - 80px - 400px);
   }
 `;

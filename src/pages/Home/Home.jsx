@@ -94,7 +94,7 @@ const Home = () => {
     );
     const slice04Pizza = filterJustPizza.slice(0, 4);
     setHotPizza(slice04Pizza);
-  }, [hotPizza, products]);
+  }, [products]);
 
   return (
     <Helmet title="Home">

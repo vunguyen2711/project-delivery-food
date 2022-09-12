@@ -23,9 +23,9 @@ const sloganData = [
 ];
 const SloganPost = () => {
   return (
-    <>
+    <div>
       <Row>
-        <S.SloganTxtContainer lg={24}>
+        <S.SloganTxtContainer style={{ textAlign: "center" }} lg={24}>
           <h5>What we serve</h5>
           <h2>Just Sit back at Home</h2>
           <h2>
@@ -56,7 +56,7 @@ const SloganPost = () => {
           </Col>
         ))}
       </S.SloganServiceContainer>
-    </>
+    </div>
   );
 };
 
