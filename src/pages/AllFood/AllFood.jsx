@@ -9,11 +9,23 @@ import ReactPaginate from "react-paginate";
 const { Option } = Select;
 
 const AllFood = () => {
+  //*Hook path
   const [searchTerm, setSearchTerm] = useState("");
   const [searchProducts, setSearchProducts] = useState([]);
-
+  //*Pagination Path
+  const [pageNumber, setPageNumber] = useState(0);
+  const productPerPage = 8;
+  const visitedPage = productPerPage * pageNumber;
+  const displayedPage = searchProducts.slice(
+    visitedPage,
+    visitedPage + productPerPage
+  );
+  const pageCount = Math.ceil(searchProducts.length / productPerPage);
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
   const handleChange = (value) => {};
-
+  //* useEffect Path:
   useEffect(() => {
     const searchFinalProducts = products.filter((product) =>
       product.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -56,11 +68,20 @@ const AllFood = () => {
             </div>
           </Col>
 
-          {searchProducts.map((item, index) => (
+          {displayedPage.map((item, index) => (
             <Col lg={6} key={item.id} md={8}>
               <ProductCart item={item} />
             </Col>
           ))}
+          <S.PaginationContainer lg={24} md={24} sm={24}>
+            <ReactPaginate
+              pageCount={pageCount}
+              onPageChange={changePage}
+              previousLabel="Prev"
+              nextLabel="Next"
+              containerClassName="products__pagination"
+            />
+          </S.PaginationContainer>
         </Row>
       </S.AllFoodContainer>
     </Helmet>
